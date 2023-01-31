@@ -8,12 +8,14 @@ export default function Main() {
   const [mask, setMask] = useState('jason');
   const [costume, setCostume] = useState('firefighter');
   const [weapon, setWeapon] = useState('axe');
+  // const [finalWords, setFinalWords] = useState(['']);
 
   return (
     <main>
       main
       <Controls {...{ mask, setMask, costume, setCostume, weapon, setWeapon }} />
       <Display {...{ mask, setMask, costume, setCostume, weapon, setWeapon }} />
+      <Stats />
     </main>
   );
 }

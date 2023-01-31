@@ -1,18 +1,23 @@
-// import React, { useState } from 'react';
+import React, { useState, currentState } from 'react';
 
-// export default function Stats() {
-//   const [count, setCount] = useState(0);
+export default function Stats() {
+  const [words, setWords] = useState(['']);
+  const [updateInput, setUpdate] = useState(words);
 
-//   const up = (e) => {
-//     console.log(e);
-//     setCount((currentState) => {
-//       return currentState + 1;
-//     });
-//   };
+  const handleWordsChange = (e) => {
+    setWords(e.target.value);
+  };
 
-//   return (
-//     <div>
-//       <p>Here are your stats:</p>
-//     </div>
-//   );
-// }
+  const handleButton = () => {
+    setUpdate(words);
+    setWords((currentState) => [...currentState, updateInput]);
+  };
+
+  return (
+    <div>
+      <h3>Any final words...?</h3>
+      <input value={words} onChange={(e) => setUpdate(e.target.value)}></input>
+      <button onClick={handleButton}>goodbye.</button>
+    </div>
+  );
+}
