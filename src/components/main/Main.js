@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Controls from './Controls/Controls.js';
 import Display from './Display/Display.js';
+import Stats from './Stats/Stats.js';
 
 export default function Main() {
   const [mask, setMask] = useState('jason');
